@@ -1,10 +1,11 @@
 import Expo from 'expo';
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+// import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ButtonsTab from '../tabs/buttons';
-import ListsTab from '../tabs/buttons';
+import ListsTab from '../tabs/lists';
 import InputTab from '../tabs/buttons';
 import FontsTab from '../tabs/buttons';
 
@@ -17,10 +18,12 @@ const Components = TabNavigator(
         tabBarLabel: 'Buttons',
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
-            name={focused ? 'emoticon-cool' : 'emoticon-neutral'}
-            size={30}
+            // name={focused ? 'star' : 'star-outlined'}
+            name='star'
+            size={20}
             type="material-community"
             color={tintColor}
+            iconStyle={{padding: 1,}}
           />
         ),
       },
@@ -31,7 +34,7 @@ const Components = TabNavigator(
       navigationOptions: {
         tabBarLabel: 'Lists',
         tabBarIcon: ({ tintColor, focused }) => (
-          <Icon name="list" size={30} type="entypo" color={tintColor} />
+          <Icon name="list" size={20} type="entypo" color={tintColor} />
         ),
       },
     },
@@ -42,8 +45,23 @@ const Components = TabNavigator(
         tabBarLabel: 'Input',
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
-            name="wpforms"
-            size={30}
+            name='search'
+            size={20}
+            type="font-awesome"
+            color={tintColor}
+          />
+        ),
+      },
+    },
+    News: {
+      screen: InputTab,
+      path: '/input',
+      navigationOptions: {
+        tabBarLabel: 'newspaper',
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Icon
+            name='instagram'
+            size={20}
             type="font-awesome"
             color={tintColor}
           />
@@ -54,11 +72,12 @@ const Components = TabNavigator(
       screen: FontsTab,
       path: '/fonts',
       navigationOptions: {
-        tabBarLabel: 'Fonts',
+        tabBarLabel: 'Settings',
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon
-            name={focused ? 'font' : 'font'}
-            size={30}
+            name='cog'
+            size={20}
+            iconStyle={{margin: 2,}}
             type="font-awesome"
             color={tintColor}
           />
@@ -67,7 +86,7 @@ const Components = TabNavigator(
     },
   },
   {
-    initialRouteName: 'ButtonsTab',
+    initialRouteName: 'ListsTab',
     animationEnabled: false,
     swipeEnabled: true,
     // Android's default option displays tabBars on top, but iOS is bottom
@@ -84,7 +103,7 @@ Components.navigationOptions = {
   drawerLabel: 'Components',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="settings"
+      name="cog"
       size={30}
       iconStyle={{
         width: 30,

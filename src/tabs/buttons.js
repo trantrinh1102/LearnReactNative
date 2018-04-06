@@ -36,13 +36,13 @@ const ButtonsTab = StackNavigator({
       ),
     }),
   },
-  Button_Detail: {
-    screen: ButtonsDetailTabView,
-    path: '/buttons_detail',
-    navigationOptions: {
-      title: 'Buttons Detail',
-    },
-  },
+  // Button_Detail: {
+  //   screen: ButtonsDetailTabView,
+  //   path: '/buttons_detail',
+  //   navigationOptions: {
+  //     title: 'Buttons Detail',
+  //   },
+  // },
 });
 
 export default ButtonsTab;
